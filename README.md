@@ -5,6 +5,18 @@ Checks the HPE MSL QuickStatus for both health errors currently present and in t
 
 Verified against HPE MSL 3040.
 
+## How it works
+Uses selenium to browse the webpages of the HPE MSL as a user. It then retrieves the completed responses of the data it wants and parses those for the relevant data.
+
+## Requirements
+python3-selenium
+(Headless) Chrome / Chromium 
+
+### Debian
+```
+apt-get install python3-selenium chromium chromium-driver python3-requests
+```
+
 ## Icinga2 Check Command definition
 ```
 object CheckCommand "hpe_msl_health" {
